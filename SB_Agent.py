@@ -289,12 +289,10 @@ class Agent:
 
         print("[+] Rendering graphics...")
         for node in path:
-            i= 0
             # print(WINDOW_WIDTH)
             # print(f"    WINDOW_HEIGHT -> {WINDOW_HEIGHT} \n    WINDOW_WIDTH -> {WINDOW_WIDTH}")
             self.drawGrid(node)
             print("[+] Done!")
-            i+=1
 
             pygame.display.update()
 
@@ -303,7 +301,6 @@ class Agent:
         while True:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
-                    
                     print("[+] Quiting...")
                     pygame.quit()
                     sys.exit()
@@ -316,14 +313,16 @@ class Agent:
         display_surface = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
 
         # Load level images
-        wall = pygame.image.load('imgs\\wall.png').convert()
-        box = pygame.image.load('imgs\\box.png').convert()
-        box_on_target = pygame.image.load('imgs\\box_on_target.png').convert()
+        wall = pygame.image.load(
+            'AI Sokoban\\imgs\\wall.png').convert()
+        box = pygame.image.load('AI Sokoban\\imgs\\box.png').convert()
+        box_on_target = pygame.image.load(
+            'AI Sokoban\\imgs\\box_on_target.png').convert()
         player_on_target = pygame.image.load(
-            'imgs\\player_on_targe.png').convert()
-        space = pygame.image.load('imgs\\grounds.png').convert()
-        target = pygame.image.load('imgs\\target.png').convert()
-        player = pygame.image.load('imgs\\player.png').convert()
+            'AI Sokoban\\imgs\\player_on_targe.png').convert()
+        space = pygame.image.load('AI Sokoban\\imgs\\grounds.png').convert()
+        target = pygame.image.load('AI Sokoban\\imgs\\target.png').convert()
+        player = pygame.image.load('AI Sokoban\\imgs\\player.png').convert()
 
         blockSize = 36  # Set the size of the grid block
         for x in range(0, WINDOW_HEIGHT, blockSize):

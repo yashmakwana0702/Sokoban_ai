@@ -22,9 +22,7 @@ class Sokoban:
         l=(0,-1)
         r=(0,1)
         # moves=[(-1,0),(0,-1),(1,0),(0,1)]
-        moves=[
-            r,u,d,l
-]
+        moves=[r,u,d,l]
         result=[]
 
         for mv in moves:
